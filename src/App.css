@@ -1,0 +1,38 @@
+@font-face {
+    font-family: "GraphikLight";   
+    src: local("GraphikLight"),
+      url("./fonts/GraphikLight.otf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "GraphikMedium";   
+    src: local("GraphikMedium"),
+      url("./fonts/GraphikMedium.otf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "GraphikRegular";   
+    src: local("GraphikRegular"),
+      url("./fonts/GraphikRegular.otf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "GraphikSemibold";   
+    src: local("GraphikSemibold"),
+      url("./fonts/GraphikSemibold.otf") format("truetype");
+  }
+
+  * {
+    margin: 0 auto;
+    padding: 0 auto;
+  }
+  
+  body,
+  html {
+    height: 100vh;
+    width: 100%;
+  }
+
+  .navbar-body{
+    background-image: linear-gradient(to right, #2F456B , #2D2E34);
+  }
