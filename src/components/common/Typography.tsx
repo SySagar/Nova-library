@@ -1,49 +1,61 @@
-import "../fonts/GraphikLight.otf";
-import "../fonts/GraphikRegular.otf";
-import "../fonts/GraphikMedium.otf";
-import "../fonts/GraphikBold.otf";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface Props {
   children: string;
   fontSize?: string;
-  Tcolor?: string;
+  color?: string;
+  position?: string;
+  fontWeight?: string;
+  left?: string;
+  right?: string;
+  top?: string;
+  bottom?: string;
 }
 
-export default function Typography(
-  { children }: Props,
-  fontSize: Props,
-  Tcolor: string
-) {
-  const [font, setFont] = useState("light");
+export default function Typography({
+  children,
+  fontSize,
+  color,
+  fontWeight,
+  position,
+  left,
+  right,
+  top,
+  bottom,
+}: Props) {
+  const [weight, setWeight] = useState(200);
 
-  if (font === "light") {
-    setFont("GraphikLight");
-  } else if (font === "regular") {
-    setFont("GraphikRegular");
-  } else if (font === "medium") {
-    setFont("GraphikMedium");
-  } else if (font === "bold") {
-    setFont("GraphikBold");
-  }
+  useEffect(() => {
+    if (fontWeight === "light") {
+      setWeight(200);
+    } else if (fontWeight === "regular") {
+      setWeight(400);
+    } else if (fontWeight === "medium") {
+      setWeight(700);
+    } else if (fontWeight === "bold") {
+      setWeight(900);
+    }
+  }, [fontWeight]);
 
-  const [textColor, setTextColor] = useState("black");
-
-  if (Tcolor === "black") {
-    setTextColor("#000000");
-  } else if (Tcolor === "white") {
-    setTextColor("#FFFFFF");
-  } else if (Tcolor === "grey") {
-    setTextColor("#808080");
-  }
 
   return (
     <div className="Typography">
       <p
         style={{
-          fontFamily: `${font}`,
+          fontFamily: "GraphikRegular",
+          fontWeight: `${weight}`,
           fontSize: `${fontSize}px`,
-          color: `${textColor}`,
+          color: `${color}`,
+          left: `${left}`,
+          right: `${right}`,
+          top: `${top}`,
+          bottom: `${bottom}`,
+          position: `${position}` as
+            | "relative"
+            | "absolute"
+            | "fixed"
+            | "sticky"
+            | "static",
         }}
       >
         {children}
