@@ -1,4 +1,4 @@
-import React from "react";
+
 import Tiptap from "./Tiptap";
 import Typography from "./common/Typography";
 import Stack from "./common/Stack";

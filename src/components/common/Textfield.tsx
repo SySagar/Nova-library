@@ -1,5 +1,5 @@
 import "../../App.css";
-import { ReactNode, useState } from "react";
+import {  useState } from "react";
 
 interface TextfieldProps {
   className?: string;
@@ -73,6 +73,7 @@ export default function Textfield({
         className={className}
         placeholder={placeholder}
         onFocus={() => {
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           document.getElementById("textField")!.style.outline = "none";
           setActive((active) => !active);
           handleCallBack(active);

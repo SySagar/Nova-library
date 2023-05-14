@@ -8,6 +8,7 @@ interface Props {
   width?: string;
   padding?: string;
   margin?: string;
+  elevation?: string;
 }
 
 export default function Card({
