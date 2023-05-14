@@ -1,4 +1,4 @@
-import Hamburger from './hamburger.svg';
+import Hamburger from './Hamburger.svg';
 import Search from './search.svg';
 import chat from './chat.svg';
 import saved from './saved.svg';
