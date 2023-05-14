@@ -4,7 +4,7 @@ import Stack from './common/Stack'
 
 export default function Cards() {
   return (
-    <Card backgroundcolor='white'>
+    <Card backgroundcolor='blue' padding='10' borderRadius='8'>
         <Stack direction='row'>
       <Avatar></Avatar>
 

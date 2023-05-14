@@ -65,3 +65,51 @@
   {
     cursor: pointer;
   }
+
+  .sidebar{
+    box-shadow: 0px 0px 10px 0px rgba(218, 216, 216, 0.65);
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    scrollbar-width: none;
+  }
+
+  .sidebar-active{
+    box-shadow: 0px 0px 10px 0px rgba(218, 216, 216, 0.65);
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    z-index: 10;
+    scrollbar-width: none;
+  }
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar-active::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.sidebar-active {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+  .divider{
+    width: 60%;
+    height: 1px;
+    background-color: #b0b0b3;
+    opacity: 0.5;
+  }
+
+  .hoverlinks:hover{
+    width: 250em;
+    border-radius: 40%;
+    background-color: #F4F4F4;
+    color: #000;
+    cursor: pointer;
+  }
