@@ -1,9 +1,10 @@
-
 import Tiptap from "./Tiptap";
 import Typography from "./common/Typography";
 import Stack from "./common/Stack";
 import Dropdown from "./common/Dropdown";
 import Textfield from "./common/Textfield";
+import Button from "./common/Button";
+import { FaWindowClose } from "react-icons/fa";
 
 export default function Modal({ handleCallBack }: any) {
   return (
@@ -15,7 +16,6 @@ export default function Modal({ handleCallBack }: any) {
         direction="column"
         position="relative"
         justifyContent="center"
-        alignItems="flex-start"
       >
         <div
           className="cross"
@@ -24,23 +24,24 @@ export default function Modal({ handleCallBack }: any) {
           }}
           style={{ position: "absolute", right: 0, top: 0, padding: "15px" }}
         >
-          X
+          <FaWindowClose/>
         </div>
         <Stack
           className="modal-content"
           position="relative"
-          width="85%"
-          height="85%"
+          width="90%"
+          height="90%"
           direction="column"
-          border="1"
+          alignItems="center"
           gap="20"
         >
-          <Typography fontSize="30" fontWeight="bold">
+          <Typography position="relative" left="10"  fontSize="30" fontWeight="bold">
             Write a new post
           </Typography>
-          
-          <Stack direction="row" gap="10">
+
+          <Stack direction="row" position="relative" right="10" gap="8" height="fit-content"  alignItems="center">
             <Dropdown></Dropdown>
+            <Typography fontWeight="bold">in</Typography>
             <Dropdown></Dropdown>
           </Stack>
 
@@ -50,10 +51,46 @@ export default function Modal({ handleCallBack }: any) {
               height="35px"
               width="100%"
               border="1"
+              placeholder="    Add a title"
             ></Textfield>
           </div>
 
-          <Tiptap />
+          <Stack direction="row" width="100%" height="300px"  border="1" borderRadius="7">
+            <Tiptap />
+          </Stack>
+
+          <Stack
+            direction="row"
+            justifyContent="flex-end"
+            width="100%"
+            position="relative"
+            alignItems="center"
+          >
+            <Stack flexGrow="1"></Stack>
+            <Stack direction="row" height="fit-content" gap="10">
+              <Button
+                width="100px"
+                height="40px"
+                border="1"
+                bordercolor="#3F52E1"
+                backgroundColor="white"
+                color="#3F52E1"
+                borderRadius="10"
+              >
+                Cancel
+              </Button>
+              <Button
+                width="80px"
+                height="40px"
+                backgroundColor="#3F52E1"
+                borderRadius="11"
+                color="white"
+                fontSize="17px"
+              >
+                Post
+              </Button>
+            </Stack>
+          </Stack>
         </Stack>
       </Stack>
     </div>

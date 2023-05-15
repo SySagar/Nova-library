@@ -4,6 +4,7 @@ interface Props {
   backgroundcolor?: string;
   borderRadius?: string;
   border?: string;
+  bordercolor?: string;
   height?: string;
   width?: string;
   padding?: string;
@@ -26,6 +27,7 @@ export default function Stack({
   className,
   backgroundcolor,
   borderRadius,
+  bordercolor,
   height,
   width,
   border,
@@ -56,11 +58,11 @@ export default function Stack({
         display: "flex",
         flexGrow: `${flexGrow}`,
         flexShrink: `${flexShrink}`,
-        height: height ? `${height}` : "100%",
-        width: width ? `${width}` : "100%",
+        height: height ? `${height}` : "auto",
+        width: width ? `${width}` : "auto",
         backgroundColor: `${backgroundcolor}`,
         borderRadius: `${borderRadius}px`,
-        border: border ? `${border}px solid #000` : '0px',
+        border: border ? bordercolor ? `${border}px solid ${bordercolor}`: `${border}px solid #000` : '0px',
         padding: `${padding}px`,
         margin: `${margin}px`,
         gap: `${gap}px`,

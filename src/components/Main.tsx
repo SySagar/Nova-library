@@ -2,6 +2,7 @@ import Stack from "./common/Stack"
 import Tab from "./common/Tab"
 import PostCard from "./PostCard"
 import Cards from "./Cards"
+import Tiptap from "./Tiptap"
 
 export default function Main() {
   return (
@@ -11,6 +12,8 @@ export default function Main() {
             <PostCard></PostCard>
               <Tab></Tab>
             <Cards></Cards>
+
+            <Tiptap></Tiptap>
         
         </Stack>
 
