@@ -23,7 +23,6 @@ interface ButtonProps {
 
 export default function Button({
   children,
-  disabled,
   className,
   position,
   border,
