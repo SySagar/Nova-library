@@ -12,6 +12,8 @@ interface Props {
   bottom?: string;
   textAlign?: string;
   border?: string;
+  height?: string;
+  width?: string;
 }
 
 export default function Typography({
@@ -26,6 +28,8 @@ export default function Typography({
   top,
   bottom,
   textAlign,
+  height,
+  width,
 }: Props) {
   const [weight, setWeight] = useState(200);
 
@@ -41,9 +45,15 @@ export default function Typography({
     }
   }, [fontWeight]);
 
-
   return (
-    <div className="Typography" style={{border:border ? '1px solid #000' : '0px'}}>
+    <div
+      className="Typography"
+      style={{
+        border: border ? "1px solid #000" : "0px",
+        height: `${height}`,
+        width: `${width}`,
+      }}
+    >
       <p
         style={{
           fontFamily: "GraphikRegular",

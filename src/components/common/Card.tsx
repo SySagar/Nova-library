@@ -7,8 +7,12 @@ interface Props {
   height?: string;
   width?: string;
   padding?: string;
+  gap?: string;
   margin?: string;
   elevation?: string;
+  direction?: string;
+  justifyContent?: string;
+  alignItems?: string;
 }
 
 export default function Card({
@@ -20,20 +24,28 @@ export default function Card({
   width,
   border,
   padding,
+  gap,
   margin,
+  direction,
+  justifyContent,
+  alignItems,
 }: Props) {
   return (
     <div
       className={className}
       style={{
         display: "flex",
-        height: height ? `${height}` : "100%",
-        width: width ? `${width}` : "100%",
+        height: height ? `${height}` : "auto",
+        width: width ? `${width}` : "auto",
         backgroundColor: `${backgroundcolor}`,
         borderRadius: `${borderRadius}px`,
         border: `${border}px solid #000`,
         padding: `${padding}px`,
         margin: `${margin}px`,
+        flexDirection: `${direction}` as "row" | "column",
+        gap: `${gap}px`,
+        justifyContent: `${justifyContent}` as "flex-start" | "center" | "flex-end",
+        alignItems: `${alignItems}` as "flex-start" | "center" | "flex-end",
       }}
     >
       {children}
