@@ -246,3 +246,10 @@
  border-radius: 20px;
     cursor: pointer;
   }
+
+  .emojis{
+    right: 0;
+    top: 10%;
+    position: absolute;
+    z-index: 100;
+  }
