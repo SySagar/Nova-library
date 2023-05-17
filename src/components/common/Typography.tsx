@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 interface Props {
-  children: string;
+  children: React.ReactNode;
   fontSize?: string;
   color?: string;
   position?: string;

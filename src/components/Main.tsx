@@ -22,12 +22,7 @@ export default function Main() {
           <Cards></Cards>
         </Stack>
 
-        <Stack
-          width="30%"
-          direction="column"
-          gap="15"
-          position="relative"
-        >
+        <Stack width="30%" direction="column" gap="15" position="relative">
           <Stack direction="column" gap="25" position="relative">
             <div style={{ padding: "10px" }}>
               <Typography
