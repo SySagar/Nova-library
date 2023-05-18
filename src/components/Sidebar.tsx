@@ -29,12 +29,7 @@ export default function Sidebar() {
           backgroundColor: "white",
         }}
       >
-        <Stack
-          direction="column"
-          position="relative"
-          width="100%"
-          height="100%"
-        >
+        <Stack direction="column" position="relative" height="100%">
           <div className="hamburger-icon" style={{ paddingBlock: "15px" }}>
             <img src={Hamburger} alt="" />
           </div>
@@ -82,24 +77,19 @@ export default function Sidebar() {
             left: 0,
             top: 0,
             bottom: 0,
-            width: "250px",
+            width: "240px",
             height: "100%",
             backgroundColor: "white",
           }}
         >
-          <Stack
-            direction="column"
-            alignItems="flex-start"
-            position="relative"
-            width="100%"
-            height="100%"
-          >
+          <Stack direction="column" position="relative" height="100%">
             <div
               className="hamburger-icon"
               style={{
                 position: "relative",
                 paddingBlock: "15px",
-                right: "70px",
+                margin: "0",
+                left: "30px",
               }}
             >
               <img src={Hamburger} alt="" />
@@ -109,83 +99,83 @@ export default function Sidebar() {
               style={{
                 position: "relative",
                 display: "flex",
-                paddingBlock: "15px",
-                alignItems: "self-start",
-                justifyContent: "self-start",
+                paddingBlock: "10px",
                 width: "100%",
-                right: "55px",
               }}
             >
-              <Stack direction="column" alignItems="flex-start" width="100%">
+              <Stack direction="column" margin="0">
                 <Stack
                   direction="row"
-                  padding="15"
-                  alignItems="center"
                   className="hoverlinks"
-                  width="fit-content"
+                  padding="18"
+                  alignItems="center"
+                  margin="0"
                 >
-                  <img style={{ paddingInlineEnd: "14px" }} src={home} alt="" />
-                  <Typography>Home</Typography>
+                  <img
+                    style={{
+                      paddingInlineEnd: "14px",
+                      margin: "0",
+                    }}
+                    src={home}
+                    alt=""
+                  />
+                  <Typography margin="0" textAlign="left">
+                    Home
+                  </Typography>
                 </Stack>
                 <Stack
                   direction="row"
-                  position="relative"
-                  left="25"
-                  padding="20"
-                  justifyContent="flex-start"
-                  gap="15px"
+                  padding="19"
                   className="hoverlinks"
-                  width="fit-content"
+                  margin="0"
                 >
                   <img
-                    style={{ paddingInlineEnd: "14px" }}
+                    style={{ paddingInlineEnd: "14px", margin: "0" }}
                     src={connect}
                     alt=""
                   />
-                  <Typography>Get Reffered</Typography>
+                  <Typography margin="0" textAlign="left">
+                    Get Reffered
+                  </Typography>
                 </Stack>
 
                 <Stack
                   direction="row"
-                  position="relative"
-                  left="20"
-                  padding="20"
-                  justifyContent="flex-start"
-                  gap="15px"
+                  padding="19"
+                  alignItems="center"
                   className="hoverlinks"
-                  width="fit-content"
-                >
-                  <img style={{ paddingInlineEnd: "14px" }} src={job} alt="" />
-                  <Typography>Job Boards</Typography>
-                </Stack>
-
-                <Stack
-                  direction="row"
-                  position="relative"
-                  left="5"
-                  padding="20"
-                  justifyContent="flex-start"
-                  gap="15px"
-                  className="hoverlinks"
-                  width="fit-content"
+                  margin="0"
                 >
                   <img
-                    style={{ paddingInlineEnd: "14px" }}
+                    style={{ paddingInlineEnd: "14px", margin: "0" }}
+                    src={job}
+                    alt=""
+                  />
+                  <Typography margin="0">Job Boards</Typography>
+                </Stack>
+
+                <Stack
+                  direction="row"
+                  padding="18"
+                  alignItems="center"
+                  className="hoverlinks"
+                  margin="0"
+                >
+                  <img
+                    style={{ paddingInlineEnd: "14px", margin: "0" }}
                     src={events}
                     alt=""
                   />
-                  <Typography>Events</Typography>
+                  <Typography textAlign="left" margin="0">
+                    Events
+                  </Typography>
                 </Stack>
 
                 <Stack
                   direction="row"
-                  position="relative"
-                  left="30"
-                  padding="20"
-                  justifyContent="flex-start"
-                  gap="15px"
+                  padding="18"
+                  alignItems="center"
                   className="hoverlinks"
-                  width="fit-content"
                 >
                   <img
                     style={{ paddingInlineEnd: "14px" }}
@@ -201,26 +191,147 @@ export default function Sidebar() {
               <Divider></Divider>
             </div>
 
-            <div style={{ paddingBlock: "30px", width: "100%" }}>
-              <Stack
-                width="10%"
-                border="1"
-                className="seconday-list"
-                direction="column"
-                gap="35"
-              >
-                <img src={plus} alt="" />
-                <div>🚀</div>
-                <div>🌳</div>
-                <div>💱</div>
-                <div>🤝</div>
-                <div>🦋</div>
-                <div>📈</div>
-                <div>🎨</div>
-                <div>💵</div>
-                <div>🦄</div>
-                <div>💻</div>
-                <div>📝</div>
+            <div style={{ width: "100%" }}>
+              <Stack className="seconday-list" direction="column">
+                <Stack
+                  className="hoverlinks"
+                  gap="5"
+                  padding="20"
+                  margin="0"
+                  alignItems="center"
+                >
+                  <img src={plus} style={{ margin: "0" }} alt="" />
+                  <Typography margin="0">Add Communities</Typography>
+                </Stack>
+                <Stack
+                  className="hoverlinks"
+                  direction="row"
+                  margin="0"
+                  padding="18"
+                  gap="12"
+                >
+                  🚀
+                  <Typography margin="0">Startup Hub</Typography>
+                </Stack>
+                <Stack
+                  className="hoverlinks"
+                  direction="row"
+                  margin="0"
+                  padding="18"
+                  gap="12"
+                >
+                  🌳
+                  <Typography margin="0">Community Builders</Typography>
+                </Stack>
+
+                <Stack
+                  className="hoverlinks"
+                  direction="row"
+                  margin="0"
+                  padding="18"
+                  gap="12"
+                >
+                  💱
+                  <Typography margin="0">Crypto and Blockchain</Typography>
+                </Stack>
+
+                <Stack
+                  className="hoverlinks"
+                  direction="row"
+                  margin="0"
+                  padding="18"
+                  gap="12"
+                >
+                  🤝
+                  <Typography margin="0">HR and Recruiting</Typography>
+                </Stack>
+
+                <Stack
+                  className="hoverlinks"
+                  direction="row"
+                  margin="0"
+                  padding="18"
+                  gap="12"
+                >
+                  🦋
+                  <Typography margin="0">Creator Space</Typography>
+                </Stack>
+
+                <Stack
+                  className="hoverlinks"
+                  direction="row"
+                  margin="0"
+                  padding="18"
+                  gap="12"
+                >
+                  📈
+                  <Typography margin="0">Marketing and Sales</Typography>
+                </Stack>
+
+                <Stack
+                  className="hoverlinks"
+                  direction="row"
+                  margin="0"
+                  padding="18"
+                  gap="12"
+                >
+                  🎨
+                  <Typography margin="0">Design</Typography>
+                </Stack>
+
+                <Stack
+                  className="hoverlinks"
+                  direction="row"
+                  margin="0"
+                  padding="18"
+                  gap="12"
+                >
+                  💵
+                  <Typography margin="0">Venture Capital</Typography>
+                </Stack>
+
+                <Stack
+                  className="hoverlinks"
+                  direction="row"
+                  margin="0"
+                  padding="18"
+                  gap="12"
+                >
+                  🦄
+                  <Typography margin="0">entrepreneurship</Typography>
+                </Stack>
+
+                <Stack
+                  className="hoverlinks"
+                  direction="row"
+                  margin="0"
+                  padding="18"
+                  gap="12"
+                >
+                  💻
+                  <Typography margin="0">Software Engineering</Typography>
+                </Stack>
+
+                <Stack
+                  className="hoverlinks"
+                  direction="row"
+                  margin="0"
+                  padding="18"
+                  gap="12"
+                >
+                  📝
+                  <Typography margin="0">General Advice</Typography>
+                </Stack>
+
+                <Stack
+                  className="hoverlinks"
+                  direction="row"
+                  margin="0"
+                  padding="20"
+                  gap="12"
+                >
+                  <Typography margin="0">Ladder Community</Typography>
+                </Stack>
               </Stack>
             </div>
           </Stack>

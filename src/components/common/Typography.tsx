@@ -14,6 +14,7 @@ interface Props {
   border?: string;
   height?: string;
   width?: string;
+  margin?: string;
 }
 
 export default function Typography({
@@ -30,6 +31,7 @@ export default function Typography({
   textAlign,
   height,
   width,
+  margin,
 }: Props) {
   const [weight, setWeight] = useState(200);
 
@@ -52,6 +54,7 @@ export default function Typography({
         border: border ? "1px solid #000" : "0px",
         height: `${height}`,
         width: `${width}`,
+        margin: `${margin}`,
       }}
     >
       <p

@@ -5,10 +5,25 @@ import Cards from "./Cards";
 import Typography from "./common/Typography";
 import Card from "./common/Card";
 import moment from "moment";
+import { useContext } from "react";
+import activeContext from "../context/activeContext";
 
 export default function Main() {
+  const { active } = useContext(activeContext);
+
   return (
     <div className="main" style={{ width: "100%", marginTop: "30px" }}>
+      <div style={{
+        position: "fixed",
+        left: "0",
+        top: "0",
+        bottom: "0",
+        right: "0",
+        opacity: active ? "0.5" : "0",
+        backgroundColor: "black",
+        zIndex: active ? "2" : "-1",
+        transitionDuration: "0.09s",
+      }}></div>
       <Stack
         direction="row"
         position="relative"

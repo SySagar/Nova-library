@@ -37,7 +37,7 @@ export default function Navbar() {
         ></div>
 
         <div style={{ paddingInlineEnd: "25px" }}>
-          <Stack className="icons" width="200px" alignItems="center">
+          <Stack className="icons" width="200px" alignItems="center" height="100%">
             <img width={"25px"} src={chat} alt="chat" />
             <img width={"20px"} src={saved} alt="saved" />
             <img width={"20px"} src={notification} alt="notification" />
