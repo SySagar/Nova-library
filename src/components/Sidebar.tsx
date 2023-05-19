@@ -77,7 +77,7 @@ export default function Sidebar() {
             left: 0,
             top: 0,
             bottom: 0,
-            width: "240px",
+            width: "245px",
             height: "100%",
             backgroundColor: "white",
           }}
@@ -90,6 +90,7 @@ export default function Sidebar() {
                 paddingBlock: "15px",
                 margin: "0",
                 left: "30px",
+                width: "fit-content",
               }}
             >
               <img src={Hamburger} alt="" />

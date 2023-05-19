@@ -78,7 +78,8 @@
     scroll-behavior: smooth;
     overflow-y: scroll;
     z-index: 10;
-    scrollbar-width: none;
+    
+  scrollbar-width: thin;
   }
 
 .sidebar::-webkit-scrollbar {
@@ -86,7 +87,15 @@
 }
 
 .sidebar-active::-webkit-scrollbar {
-  display: none;
+  scroll-behavior: smooth;
+  width: 8px;
+  z-index: 10;
+  scrollbar-width: thin;
+}
+
+  .sidebar-active::-webkit-scrollbar-thumb {
+    background: #c9c9c9;
+    border-radius: 10px;
 }
 
 .sidebar {
@@ -94,10 +103,6 @@
   scrollbar-width: none;  /* Firefox */
 }
 
-.sidebar-active {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
 
   .divider{
     width: 90%;
