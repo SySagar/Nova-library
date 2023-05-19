@@ -5,7 +5,7 @@ import { useState } from "react";
 import Modal from "./Modal.js";
 
 export default function PostCard() {
-  const [editor, setEditor] = useState(true);
+  const [editor, setEditor] = useState(false);
 
   function callBack(textFieldData: boolean) {
     setEditor(textFieldData);

@@ -33,7 +33,7 @@ export default function Main() {
         <Stack width="70%" position="relative" direction="column">
           <PostCard></PostCard>
           <Tab></Tab>
-          <Cards></Cards>
+          {/* <Cards></Cards> */}
         </Stack>
 
         <Stack width="30%" direction="column" gap="15" position="relative">
