@@ -29,15 +29,15 @@ export default function Main() {
         className="main-body"
         width="70%"
       >
-        <Stack width="70%" position="relative" direction="column">
+        <Stack className="post-cards" width="65%" position="relative" direction="column">
           <PostCard></PostCard>
           <Tab></Tab>
           {/* <Cards></Cards> */}
         </Stack>
 
-        <Stack width="30%" direction="column" gap="15" position="relative">
+        <Stack className="right-cards" id="right-cards" width="30%" direction="column" gap="15">
           <Stack direction="column" gap="25" position="relative">
-            <div style={{ padding: "10px" }}>
+            <div style={{ padding: "5px" }}>
               <Typography
                 position="absolute"
                 color="#4A52E3"
@@ -71,10 +71,9 @@ export default function Main() {
 
             <Card
               direction="column"
-              justifyContent="flex-start"
               gap="15"
               backgroundcolor="white"
-              padding="20"
+              padding="22"
               borderRadius="7"
             >
               <Typography fontSize="12" fontWeight="bold">

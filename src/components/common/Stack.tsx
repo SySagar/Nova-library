@@ -21,6 +21,7 @@ interface Props {
   top?: string;
   bottom?: string;
   id?: string;
+  display?: string;
 }
 
 export default function Stack({
@@ -46,6 +47,7 @@ export default function Stack({
   bottom,
   flexShrink,
   id,
+  display,
 }: Props) {
   return (
     <div
@@ -58,7 +60,7 @@ export default function Stack({
           | "fixed"
           | "sticky"
           | "static",
-        display: "flex",
+        display: display ? `${display}` as "flex" | "block" | "inline" | "inline-block" | "none" : "flex",
         flexGrow: `${flexGrow}`,
         flexShrink: `${flexShrink}`,
         height: height ? `${height}` : "auto",

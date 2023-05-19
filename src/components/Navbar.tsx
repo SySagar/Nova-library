@@ -7,50 +7,69 @@ import {
   Hamburger,
 } from "../assets/icons/index";
 import ActiveContext from "../context/activeContext";
-import { useContext} from "react";
+import { useContext } from "react";
 
 export default function Navbar() {
   const hamburgerSwitch = useContext(ActiveContext);
   console.log(hamburgerSwitch.active);
 
   return (
-    <div className="Navbar" style={{ position: "relative", width: "100%" }}>
-      <Stack
-        className="navbar-body"
-        direction="row"
-        width="100%"
-        height="55px"
-        position="relative"
-      >
-        <Stack justifyContent="center" alignItems="center" width="270px">
-          <div onMouseOver={hamburgerSwitch.setActive}>
-            <img style={{ width: "27px" }} src={Hamburger} alt="hamburger" />
-          </div>
-
-          <img src={logo} alt="logo" />
-        </Stack>
+    <Stack
+      id="navbar"
+      className="navbar-body"
+      direction="row"
+      width="100%"
+      position="relative"
+    >
+      <Stack margin="0" alignItems="center">
         <div
-          style={{
-            display: "flex",
-            flexGrow: "1",
-          }}
-        ></div>
-
-        <div style={{ paddingInlineEnd: "25px" }}>
-          <Stack className="icons" width="200px" alignItems="center" height="100%">
-            <img width={"25px"} src={chat} alt="chat" />
-            <img width={"20px"} src={saved} alt="saved" />
-            <img width={"20px"} src={notification} alt="notification" />
-            <img
-              width={"30px"}
-              height={"30px"}
-              style={{ borderRadius: "50%" }}
-              src="https://firebasestorage.googleapis.com/v0/b/remote-students-community-app.appspot.com/o/DefaultProfilePic.jpg?alt=media"
-              alt=""
-            />
-          </Stack>
+          className="hamburger"
+          id="hamburger"
+          style={{ margin: "0", paddingInline: "25px" }}
+          onMouseOver={hamburgerSwitch.setActive}
+        >
+          <img
+            style={{ width: "27px", margin: "0" }}
+            src={Hamburger}
+            alt="hamburger"
+          />
         </div>
+
+        <img style={{ margin: "0" }} src={logo} alt="logo" />
       </Stack>
-    </div>
+      <div
+        className="grower"
+        style={{
+          display: "flex",
+          flexGrow: "1",
+          margin: "0",
+        }}
+      ></div>
+
+      <div
+        className="icon-outer"
+        style={{ paddingInlineEnd: "25px", margin: "0" }}
+      >
+        <Stack
+          className="icons"
+          id="icons"
+          gap="32"
+          alignItems="center"
+          height="100%"
+        >
+          <img width={"25px"} src={chat} alt="chat" />
+          <img width={"20px"} src={saved} alt="saved" />
+          <img width={"20px"} src={notification} alt="notification" />
+          <img
+            className="profile-pic"
+            width={"30px"}
+            height={"30px"}
+            style={{ borderRadius: "50%" }}
+            src="https://firebasestorage.googleapis.com/v0/b/remote-students-community-app.appspot.com/o/DefaultProfilePic.jpg?alt=media"
+            alt=""
+          />
+        </Stack>
+      </div>
+    </Stack>
   );
 }

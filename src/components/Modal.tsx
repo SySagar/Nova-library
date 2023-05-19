@@ -12,8 +12,7 @@ export default function Modal({ handleCallBack }: any) {
       <Stack
       id="modal-container"
         className="modal-container"
-        width="50%"
-        height="70%"
+
         direction="column"
         position="relative"
         justifyContent="center"
