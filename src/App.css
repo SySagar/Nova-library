@@ -121,9 +121,13 @@
     border-top: 1px solid grey;
     background: white;
     border-radius: 0 0 5px 5px;
-    min-height: 100px;
+    height: 160px;
   }
   .ProseMirror:focus {
+    border: none;
+  }
+
+  .ProseMirror:active {
     border: none;
   }
 

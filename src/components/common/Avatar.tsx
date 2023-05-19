@@ -1,11 +1,37 @@
-
-export default function Avatar() {
+interface AvatarProps {
+  src: string;
+  alt?: string;
+  width?: string;
+  height?: string;
+  borderRadius?: string;
+  border?: string;
+  margin?: string;
+  padding?: string;
+}
+export default function Avatar({
+  src,
+  alt,
+  width,
+  height,
+  borderRadius,
+  border,
+  margin,
+  padding,
+}: AvatarProps) {
   return (
-    <div className="avatar">
+    <div className="avatar" style={{ margin: 0 }}>
       <img
-        style={{ borderRadius: "100%", width: "35px", height: "35px",objectFit:"cover" }}
-        src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-        alt="image"
+        style={{
+          borderRadius: borderRadius ? `${borderRadius}px` : "100%",
+          width: width ? `${width}px`: '30px',
+          height: height? `${height}px`: '30px',
+          padding: `${padding}px`,
+          margin: `${margin}px`,
+          objectFit: "cover",
+          border: border ? `${border}px solid black` : "none",
+        }}
+        src={src}
+        alt={alt}
       />
     </div>
   );

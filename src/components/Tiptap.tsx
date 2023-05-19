@@ -28,7 +28,7 @@ const MenuBar = ({ editor, emojiBoard, setEmojiBoard }: MenuBarProps) => {
   }
 
   return (
-    <div className="menu-bar" style={{ position: "relative" }}>
+    <div className="menu-bar" style={{ position: "relative"}}>
       <button
         onClick={() => editor.chain().focus().toggleBold().run()}
         disabled={!editor.can().chain().focus().toggleBold().run()}
@@ -197,7 +197,7 @@ export default function Tiptap() {
   }
 
   return (
-    <div className="text-editor" style={{ width: "100%", height: "100%" }}>
+    <div className="text-editor" style={{ width: "100%",margin:'0' }}>
       <div className="menubar" style={{position:'relative'}}>
         <MenuBar
           editor={editor}

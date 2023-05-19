@@ -24,7 +24,7 @@ export default function Modal({ handleCallBack }: any) {
           }}
           style={{ position: "absolute", right: 0, top: 0, padding: "15px" }}
         >
-          <FaWindowClose/>
+          <FaWindowClose />
         </div>
         <Stack
           className="modal-content"
@@ -32,16 +32,29 @@ export default function Modal({ handleCallBack }: any) {
           width="90%"
           height="90%"
           direction="column"
-          alignItems="center"
-          gap="20"
+          gap="16"
         >
-          <Typography position="relative" left="10"  fontSize="30" fontWeight="bold">
+          <Typography
+            position="relative"
+            left="10"
+            margin="0"
+            fontSize="30"
+            fontWeight="bold"
+          >
             Write a new post
           </Typography>
 
-          <Stack direction="row" position="relative" right="10" gap="8" height="fit-content"  alignItems="center">
+          <Stack
+            direction="row"
+            margin="0"
+            height="fit-content"
+            alignItems="center"
+            gap="5"
+          >
             <Dropdown></Dropdown>
-            <Typography fontWeight="bold">in</Typography>
+            <Typography margin="0" fontWeight="bold">
+              in
+            </Typography>
             <Dropdown></Dropdown>
           </Stack>
 
@@ -55,7 +68,13 @@ export default function Modal({ handleCallBack }: any) {
             ></Textfield>
           </div>
 
-          <Stack direction="row" width="100%" height="300px"  border="1" borderRadius="7">
+          <Stack
+            direction="row"
+            width="100%"
+            height="250px"
+            border="1"
+            borderRadius="7"
+          >
             <Tiptap />
           </Stack>
 
