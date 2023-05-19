@@ -1,7 +1,6 @@
 import Stack from "./common/Stack";
 import Tab from "./common/Tab";
 import PostCard from "./PostCard";
-import Cards from "./Cards";
 import Typography from "./common/Typography";
 import Card from "./common/Card";
 import moment from "moment";
