@@ -28,7 +28,7 @@ const MenuBar = ({ editor, emojiBoard, setEmojiBoard }: MenuBarProps) => {
   }
 
   return (
-    <div className="menu-bar" style={{ position: "relative"}}>
+    <div className="menu-bar" id="menu-bar" style={{ position: "relative"}}>
       <button
         onClick={() => editor.chain().focus().toggleBold().run()}
         disabled={!editor.can().chain().focus().toggleBold().run()}

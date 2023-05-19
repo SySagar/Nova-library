@@ -20,6 +20,7 @@ interface Props {
   left?: string;
   top?: string;
   bottom?: string;
+  id?: string;
 }
 
 export default function Stack({
@@ -44,9 +45,11 @@ export default function Stack({
   top,
   bottom,
   flexShrink,
+  id,
 }: Props) {
   return (
     <div
+      id={id}
       className={className}
       style={{
         position: `${position}` as

@@ -8,8 +8,9 @@ import { FaWindowClose } from "react-icons/fa";
 
 export default function Modal({ handleCallBack }: any) {
   return (
-    <div className="modal">
+    <div className="modal" id="modal">
       <Stack
+      id="modal-container"
         className="modal-container"
         width="50%"
         height="70%"
@@ -45,6 +46,7 @@ export default function Modal({ handleCallBack }: any) {
           </Typography>
 
           <Stack
+          id="modal-dropdowns"
             direction="row"
             margin="0"
             height="fit-content"
