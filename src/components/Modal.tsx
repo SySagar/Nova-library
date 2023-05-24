@@ -2,17 +2,18 @@ import Tiptap from "./Tiptap";
 import Typography from "./common/Typography";
 import Stack from "./common/Stack";
 import Dropdown from "./common/Dropdown";
+import Dropdown2 from "./common/DropDown2";
 import Textfield from "./common/Textfield";
 import Button from "./common/Button";
-import { FaWindowClose } from "react-icons/fa";
+import { Cross } from "../assets/icons";
+import Checkbox from "./common/Checkbox";
 
 export default function Modal({ handleCallBack }: any) {
   return (
     <div className="modal" id="modal">
       <Stack
-      id="modal-container"
+        id="modal-container"
         className="modal-container"
-
         direction="column"
         position="relative"
         justifyContent="center"
@@ -24,13 +25,14 @@ export default function Modal({ handleCallBack }: any) {
           }}
           style={{ position: "absolute", right: 0, top: 0, padding: "15px" }}
         >
-          <FaWindowClose />
+          <img src={Cross} alt="" />
         </div>
         <Stack
           className="modal-content"
           position="relative"
           width="90%"
           height="90%"
+          paddingy="10"
           direction="column"
           gap="16"
         >
@@ -45,18 +47,19 @@ export default function Modal({ handleCallBack }: any) {
           </Typography>
 
           <Stack
-          id="modal-dropdowns"
+            id="modal-dropdowns"
             direction="row"
             margin="0"
             height="fit-content"
             alignItems="center"
             gap="5"
+            width="44vw"
           >
             <Dropdown></Dropdown>
             <Typography margin="0" fontWeight="bold">
               in
             </Typography>
-            <Dropdown></Dropdown>
+            <Dropdown2></Dropdown2>
           </Stack>
 
           <div style={{ width: "100%" }}>
@@ -65,7 +68,7 @@ export default function Modal({ handleCallBack }: any) {
               height="35px"
               width="100%"
               border="1"
-              placeholder="    Add a title"
+              placeholder="Add a title"
             ></Textfield>
           </div>
 
@@ -86,6 +89,12 @@ export default function Modal({ handleCallBack }: any) {
             position="relative"
             alignItems="center"
           >
+            <Stack direction="row" margin="0" gap="8" alignItems="center">
+              <Checkbox></Checkbox>
+              <Typography margin="0" fontSize="13" fontWeight="light">
+                Allow anonymous comments
+              </Typography>
+            </Stack>
             <Stack flexGrow="1"></Stack>
             <Stack direction="row" height="fit-content" gap="10">
               <Button

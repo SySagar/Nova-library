@@ -5,5 +5,7 @@ import saved from './saved.svg';
 import home from './home.svg';
 import logo from './logo.svg';
 import notification from './notification.svg';
+import Phamburger from './phamburger.svg';
+import Cross from './cross.svg';
 
-export { Hamburger, Search, chat, saved, home, logo, notification };
+export { Hamburger, Search, chat, saved, home, logo, notification, Phamburger, Cross };

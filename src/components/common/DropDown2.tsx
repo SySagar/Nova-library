@@ -1,13 +1,24 @@
-import Avatar from "./Avatar";
 import { FaCaretDown } from "react-icons/fa";
 import Typography from "./Typography";
 import { useState } from "react";
 import Stack from "./Stack";
 
-const content = ["Innovative Changemaker", "Enthused Cricket"];
+const content = [
+  "🚀 Startup Hub",
+  "🌳 Community Builders",
+  "💱 Crypto and Blockchain",
+  "🤝 HR and Recruiting",
+  "🦋 Creator Space",
+  "📈 Marketing and Sales",
+  "🎨 Design",
+  "💵 Venture Capital",
+  "🦄 Entrepreneurship",
+  "💻 Software Engineering",
+  "📝 General Advice",
+];
 
-export default function Dropdown() {
-  const [index, setIndex] = useState(content[0]);
+export default function Dropdown2() {
+  const [index, setIndex] = useState("Select a Community");
   const [active, setActive] = useState(false);
   return (
     <Stack className="dropdown" direction="row" margin="0">
@@ -29,20 +40,17 @@ export default function Dropdown() {
             backgroundColor: "white",
             borderRadius: "20px",
             borderColor: "grey",
-            border: "1px #E0E0E0 solid",
           }}
         >
           <Stack
             direction="row"
             alignItems="center"
+            justifyContent="center"
             gap="5"
+            padding="2"
+            paddingx="22"
           >
-            <Avatar
-              width="20"
-              height="20"
-              src="https://firebasestorage.googleapis.com/v0/b/remote-students-community-app.appspot.com/o/DefaultProfilePic.jpg?alt=media"
-            />
-            <Typography fontSize="15" fontWeight="bold">
+            <Typography fontSize="15" fontWeight="bold" color="grey">
               {index}
             </Typography>
             <div>
@@ -53,11 +61,16 @@ export default function Dropdown() {
 
         {active && (
           <div
+          className="dropdown-content"
             style={{
               display: "flex",
               flexDirection: "column",
               backgroundColor: "white",
               borderRadius: "10px",
+              height: "220px",
+              overflow: "scroll",
+              overflowY: "scroll",
+              overflowX: "hidden",
               borderColor: "grey",
               boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.15)",
               padding: "5px",
@@ -70,6 +83,8 @@ export default function Dropdown() {
             <li
               style={{
                 display: "flex",
+                justifyContent: "flex-start",
+                alignItems: "flex-start",
                 flexDirection: "column",
                 backgroundColor: "white",
                 borderRadius: "10px",
@@ -79,9 +94,9 @@ export default function Dropdown() {
                 <button
                   style={{
                     padding: "10px",
-                    width: "100%",
                     backgroundColor: "white",
-                    border: "none",
+                    margin: "0",
+                    border: "1px #fff solid",
                   }}
                   onClick={() => setIndex(item)}
                 >

@@ -22,6 +22,21 @@ interface Props {
   bottom?: string;
   id?: string;
   display?: string;
+  paddingbottom?: string;
+  paddingleft?: string;
+  paddingright?: string;
+  paddingtop?: string;
+  marginbottom?: string;
+  marginleft?: string;
+  marginright?: string;
+  margintop?: string;
+  paddingx?: string;
+  paddingy?: string;
+  minWidth?: string;
+  maxWidth?: string;
+  minHeight?: string;
+  maxHeight?: string;
+  wordWrap?: string;
 }
 
 export default function Stack({
@@ -48,6 +63,20 @@ export default function Stack({
   flexShrink,
   id,
   display,
+  paddingbottom,
+  paddingleft,
+  paddingright,
+  paddingtop,
+  marginbottom,
+  marginleft,
+  marginright,
+  margintop,
+  paddingx,
+  paddingy,
+  minWidth,
+  maxWidth,
+  minHeight,
+  maxHeight,
 }: Props) {
   return (
     <div
@@ -65,10 +94,24 @@ export default function Stack({
         flexShrink: `${flexShrink}`,
         height: height ? `${height}` : "auto",
         width: width ? `${width}` : "auto",
+        minWidth: minWidth ? `${minWidth}` : "auto",
+        maxWidth: maxWidth ? `${maxWidth}` : "auto",
+        minHeight: minHeight ? `${minHeight}` : "auto",
+        maxHeight: maxHeight ? `${maxHeight}` : "auto",
         backgroundColor: `${backgroundcolor}`,
         borderRadius: `${borderRadius}px`,
         border: border ? bordercolor ? `${border}px solid ${bordercolor}`: `${border}px solid #000` : '0px',
         padding: `${padding}px`,
+        paddingLeft: `${paddingleft}px`,
+        paddingRight: `${paddingright}px`,
+        paddingTop: `${paddingtop}px`,
+        paddingBottom: `${paddingbottom}px`,
+        paddingInline: `${paddingx}px`,
+        paddingBlock: `${paddingy}px`,
+        marginBottom: `${marginbottom}px`,
+        marginLeft: `${marginleft}px`,
+        marginRight: `${marginright}px`,
+        marginTop: `${margintop}px`,
         margin: `${margin}px`,
         gap: `${gap}px`,
         right: right ? `${right}px` : "0px",

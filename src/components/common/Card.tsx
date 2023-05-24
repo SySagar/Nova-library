@@ -1,6 +1,7 @@
 interface Props {
   children?: React.ReactNode;
   className?: string;
+  id?: string;
   backgroundcolor?: string;
   borderRadius?: string;
   border?: string;
@@ -18,6 +19,7 @@ interface Props {
 export default function Card({
   children,
   className,
+  id,
   backgroundcolor,
   borderRadius,
   height,
@@ -33,6 +35,7 @@ export default function Card({
   return (
     <div
       className={className}
+      id={id}
       style={{
         display: "flex",
         height: height ? `${height}` : "auto",

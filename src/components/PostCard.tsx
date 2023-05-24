@@ -13,14 +13,15 @@ export default function PostCard() {
   }
 
   return (
-    <div className="post-card" style={{ position: "relative", width: "100%" }}>
+    <div className="post-card" style={{ position: "relative", width: "100%",margin:'0px',marginBottom: '16px!important' }}>
       <Stack
-        height="60px"
+        height="76px"
         padding="10"
         alignItems="center"
         position="relative"
-        borderRadius="15"
+        borderRadius="12"
         backgroundcolor="white"
+        marginbottom="16px!important"
       >
         <img
           style={{

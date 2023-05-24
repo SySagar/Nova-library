@@ -6,12 +6,14 @@ import {
   FaItalic,
   FaListOl,
   FaListUl,
-  FaStrikethrough,
   FaUnderline,
   FaSmile,
+  FaFileImage,
+  FaFileAlt,
 } from "react-icons/fa";
 import Underline from "@tiptap/extension-underline";
-import CustomImage from "./Image";
+import Placeholder from "@tiptap/extension-placeholder";
+import Image from "@tiptap/extension-image";
 import EmojiPicker from "emoji-picker-react";
 import { useState } from "react";
 import { EmojiClickData } from "emoji-picker-react";
@@ -27,8 +29,35 @@ const MenuBar = ({ editor, emojiBoard, setEmojiBoard }: MenuBarProps) => {
     return null;
   }
 
+  const upload = (file: File) => {
+    // handle upload logic here
+
+    return Promise.resolve("https://picsum.photos/200/300");
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!e?.target?.files?.[0]) return;
+    upload(e.target.files[0])
+      .then((res) => addImage(res))
+      .catch((err) => console.error(err));
+  };
+
+  // const setLink = () => {
+  //   const url = window.prompt("URL");
+
+  //   if (!url) return;
+
+  //   editor.chain().focus().extendMarkRange("link").setLink({ href: url }).run();
+  // };
+
+  const addImage = (url: string) => {
+    if (url) {
+      editor.chain().focus().setImage({ src: url }).run();
+    }
+  };
+
   return (
-    <div className="menu-bar" id="menu-bar" style={{ position: "relative"}}>
+    <div className="menu-bar" id="menu-bar" style={{ position: "relative" }}>
       <button
         onClick={() => editor.chain().focus().toggleBold().run()}
         disabled={!editor.can().chain().focus().toggleBold().run()}
@@ -50,74 +79,20 @@ const MenuBar = ({ editor, emojiBoard, setEmojiBoard }: MenuBarProps) => {
       >
         <FaUnderline />
       </button>
-      <button
+      {/* <button
         onClick={() => editor.chain().focus().toggleStrike().run()}
         disabled={!editor.can().chain().focus().toggleStrike().run()}
         className={editor.isActive("strike") ? "is-active" : ""}
       >
         <FaStrikethrough />
-      </button>
-      {/* <button
-        onClick={() => editor.chain().focus().toggleCode().run()}
-        disabled={
-          !editor.can()
-            .chain()
-            .focus()
-            .toggleCode()
-            .run()
-        }
-        className={editor.isActive('code') ? 'is-active' : ''}
-      >
-        code
       </button> */}
-      {/* <button onClick={() => editor.chain().focus().unsetAllMarks().run()}>
-        clear marks
-      </button> */}
-      {/* <button onClick={() => editor.chain().focus().clearNodes().run()}>
-        clear nodes
-      </button> */}
-      {/* <button
-        onClick={() => editor.chain().focus().setParagraph().run()}
-        className={editor.isActive('paragraph') ? 'is-active' : ''}
-      >
-        paragraph
-      </button> */}
+
       <button
         onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
         className={editor.isActive("heading", { level: 1 }) ? "is-active" : ""}
       >
         <FaHeading />
       </button>
-      {/* <button
-        onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
-        className={editor.isActive('heading', { level: 2 }) ? 'is-active' : ''}
-      >
-        h2
-      </button>
-      <button
-        onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
-        className={editor.isActive('heading', { level: 3 }) ? 'is-active' : ''}
-      >
-        h3
-      </button>
-      <button
-        onClick={() => editor.chain().focus().toggleHeading({ level: 4 }).run()}
-        className={editor.isActive('heading', { level: 4 }) ? 'is-active' : ''}
-      >
-        h4
-      </button>
-      <button
-        onClick={() => editor.chain().focus().toggleHeading({ level: 5 }).run()}
-        className={editor.isActive('heading', { level: 5 }) ? 'is-active' : ''}
-      >
-        h5
-      </button>
-      <button
-        onClick={() => editor.chain().focus().toggleHeading({ level: 6 }).run()}
-        className={editor.isActive('heading', { level: 6 }) ? 'is-active' : ''}
-      >
-        h6
-      </button> */}
       <button
         onClick={() => editor.chain().focus().toggleBulletList().run()}
         className={editor.isActive("bulletList") ? "is-active" : ""}
@@ -131,59 +106,44 @@ const MenuBar = ({ editor, emojiBoard, setEmojiBoard }: MenuBarProps) => {
         <FaListOl />
       </button>
 
-      <button style={{ position: "absolute", right: 0 }} onClick={() => setEmojiBoard(!emojiBoard)}>
+      <button
+        style={{ position: "absolute", right: 0 }}
+        onClick={() => setEmojiBoard(!emojiBoard)}
+      >
         <FaSmile />
       </button>
-      {/* <button
-        onClick={() => editor.chain().focus().toggleCodeBlock().run()}
-        className={editor.isActive('codeBlock') ? 'is-active' : ''}
-      >
-        code block
-      </button> */}
-      {/* <button
-        onClick={() => editor.chain().focus().toggleBlockquote().run()}
-        className={editor.isActive('blockquote') ? 'is-active' : ''}
-      >
-        blockquote
-      </button> */}
-      {/* <button onClick={() => editor.chain().focus().setHorizontalRule().run()}>
-        horizontal rule
+
+      <button>
+        <label htmlFor="upload-image">
+          <FaFileImage />
+          <input
+            id="upload-image"
+            accept=".jpg,.png,.jpeg"
+            type="file"
+            onChange={handleChange}
+          />
+        </label>
       </button>
-      <button onClick={() => editor.chain().focus().setHardBreak().run()}>
-        hard break
-      </button> */}
-      {/* <button
-        onClick={() => editor.chain().focus().undo().run()}
-        disabled={
-          !editor.can()
-            .chain()
-            .focus()
-            .undo()
-            .run()
-        }
-      >
-        undo
+      <button>
+        <label htmlFor="upload-file">
+          <FaFileAlt />
+          <input id="upload-file" type="file" onChange={handleChange} />
+        </label>
       </button>
-      <button
-        onClick={() => editor.chain().focus().redo().run()}
-        disabled={
-          !editor.can()
-            .chain()
-            .focus()
-            .redo()
-            .run()
-        }
-      >
-        redo
-      </button> */}
     </div>
   );
 };
 
 export default function Tiptap() {
   const editor = useEditor({
-    extensions: [StarterKit, Underline, CustomImage],
-    content: ``,
+    extensions: [
+      StarterKit,
+      Underline,
+      Image,
+      Placeholder.configure({
+        placeholder: "What are your thoughts on...",
+      }),
+    ],
   });
 
   const [emojiBoard, setEmojiBoard] = useState(false);
@@ -197,8 +157,8 @@ export default function Tiptap() {
   }
 
   return (
-    <div className="text-editor" style={{ width: "100%",margin:'0' }}>
-      <div className="menubar" style={{position:'relative'}}>
+    <div className="text-editor" style={{ width: "100%", margin: "0" }}>
+      <div className="menubar" style={{ position: "relative" }}>
         <MenuBar
           editor={editor}
           emojiBoard={emojiBoard}
@@ -211,7 +171,7 @@ export default function Tiptap() {
         )}
       </div>
 
-      <EditorContent editor={editor} />
+      <EditorContent className="editor" editor={editor} />
     </div>
   );
 }

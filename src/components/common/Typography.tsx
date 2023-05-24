@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 interface Props {
   children: React.ReactNode;
+  className?: string;
   fontSize?: string;
   color?: string;
   position?: string;
@@ -15,10 +16,14 @@ interface Props {
   height?: string;
   width?: string;
   margin?: string;
+  lineHeight?: string;
+  justifyContent?: string;
+  alignItems?: string;
 }
 
 export default function Typography({
   children,
+  className,
   fontSize,
   color,
   fontWeight,
@@ -32,6 +37,9 @@ export default function Typography({
   height,
   width,
   margin,
+  lineHeight,
+  justifyContent,
+  alignItems,
 }: Props) {
   const [weight, setWeight] = useState(200);
 
@@ -49,12 +57,14 @@ export default function Typography({
 
   return (
     <div
-      className="Typography"
+      className={className}
       style={{
         border: border ? "1px solid #000" : "0px",
         height: `${height}`,
         width: `${width}`,
         margin: `${margin}`,
+        justifyContent: `${justifyContent}`,
+        alignItems: `${alignItems}`,
       }}
     >
       <p
@@ -68,6 +78,7 @@ export default function Typography({
           right: `${right}`,
           top: `${top}`,
           bottom: `${bottom}`,
+          lineHeight: `${lineHeight}`,
           position: `${position}` as
             | "relative"
             | "absolute"

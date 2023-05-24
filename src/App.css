@@ -23,6 +23,7 @@
 
 * {
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 body,
@@ -33,7 +34,56 @@ html {
 }
 
 .navbar-body {
-  background-image: linear-gradient(to right, #2f456b, #2d2e34);
+  background: linear-gradient(280.39deg,#071530 64.59%,#405a86 109.59%);
+}
+
+.nav-links:hover{
+  background-color: white;
+  border-radius: 100%;
+  align-items: center;
+  justify-content: center; 
+}
+
+.nav-links{
+  padding: 5px;
+}
+
+
+#left-top-cards{
+  margin: 10px 5px 0px 5px;
+  padding: 24px 32px;
+  font-size: 14px;
+}
+
+
+.left-down-cards{
+  margin: 10px 0 20px 5px;
+  padding: 24px 32px;
+}
+
+
+.main{
+  overflow: scroll;
+}
+
+
+@media (width < 1200px) {
+
+
+  .main-body{
+    padding-inline: 32px;
+    padding-block: 32px;
+  }
+ 
+}
+
+@media (width > 1200px) {
+
+  .main-body{
+    padding-inline: 180px;
+    padding-block: 32px;
+  }
+ 
 }
 
 .modal {
@@ -42,7 +92,7 @@ html {
   top: 0;
   left: 0;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
@@ -50,8 +100,15 @@ html {
   z-index: 10;
 }
 
+
+@keyframes modal-animation {
+  0%   {top:-40px;opacity: 0;}
+  100% { top:0px;opacity: 1;}
+}
+
 .modal-container {
   display: flex;
+  width: 100%;
   opacity: 10;
   background-color: #fff;
   border-radius: 10px;
@@ -59,15 +116,15 @@ html {
   justify-content: center;
   align-items: center;
   padding: 25px;
+  transition: opacity .15s linear;
+  animation-name: modal-animation;
+  animation-duration: 0.5s;
 }
 
-#modal-dropdowns {
-  flex-wrap: wrap;
-}
 
 @media only screen and (max-width: 550px) {
   #modal-container {
-    min-width: 70vw;
+    min-width: 80vw;
   }
 
   #modal {
@@ -95,27 +152,28 @@ html {
   }
 }
 
-@media (675px <= width <= 950px) {
+@media (width > 1000px) {
   #modal-container {
-    min-width: 80%;
+    min-width: 40vw;
   }
 }
 
-@media (950px <= width <= 1200px) {
-  #modal-container {
-    min-width: 80vh;
-  }
-
-  #modal-dropdowns {
-    flex-wrap: wrap;
-  }
+.dropdown-content::-webkit-scrollbar {
+  display: none;
 }
 
-@media (1200px <= width) {
-  #modal-container {
-    min-width: 80vh;
-  }
+.dropdown-content::-webkit-scrollbar {
+  scroll-behavior: smooth;
+  width: 8px;
+  z-index: 10;
+  scrollbar-width: thin;
 }
+
+.dropdown-content::-webkit-scrollbar-thumb {
+  background: #c9c9c9;
+  border-radius: 10px;
+}
+
 
 .cross {
   cursor: pointer;
@@ -151,7 +209,6 @@ html {
 @media (width <= 900px) {
   #right-cards {
     visibility: collapse;
-    border: 1px solid #000;
     background-color: aqua;
   }
 
@@ -176,7 +233,6 @@ html {
   scroll-behavior: smooth;
   overflow-y: scroll;
   z-index: 10;
-
   scrollbar-width: thin;
 }
 
@@ -210,8 +266,28 @@ html {
 
 .hoverlinks:hover {
   width: 1000px;
+  align-items: center;
   border-radius: 20px 20px 20px 20px;
   background-color: #f4f4f4;
+  cursor: pointer;
+}
+
+#upload-image{
+  display: none;
+}
+
+#upload-file{
+  display: none;
+}
+
+label{
+  cursor: pointer;;
+}
+
+.phoverlinks:hover {
+  width: 1000px;
+  border-radius: 20px 20px 20px 20px;
+  background-color: #ECEDFB;
   cursor: pointer;
 }
 
@@ -219,22 +295,34 @@ html {
 /* Basic editor styles */
 .ProseMirror {
   padding: 10px;
-  border-top: 1px solid grey;
   background: white;
   border-radius: 0 0 5px 5px;
-  height: 160px;
+  height: 165px;
+  border: 0;
+  overflow-y: scroll;
 }
 .ProseMirror:focus {
-  border: none;
+  margin: 0;
+  outline: 0;
 }
 
-.ProseMirror:active {
-  border: none;
+.ProseMirror p.is-editor-empty:first-child::before {
+  color: #adb5bd;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
 }
 
-.ProseMirror {
-  border: none;
+.editor ::-webkit-scrollbar {
+  display: none;
 }
+
+
+.editor ::-webkit-scrollbar-thumb {
+  display: none;
+}
+
 
 .ProseMirror > * + * {
   margin-top: 0.75em;
@@ -357,3 +445,35 @@ button.is_active {
   position: absolute;
   z-index: 100;
 }
+
+.Checkbox {
+  border-radius: 10px;
+  color: #3F52E1;
+}
+
+
+.tabs {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  cursor: pointer;
+}
+
+.tabs li {
+  display: flex;
+  height: 4px;
+  width: 100%;
+  background: #c5c5c5;
+  border-radius: 6px;
+  margin-block: 10px;
+}
+
+.tabs li.active {
+  background: #5866E3;
+}
+
+.tabs .inner-text:active {
+  color: #000;
+  font-weight: bolder;
+}
+ 

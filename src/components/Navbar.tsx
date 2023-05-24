@@ -20,16 +20,17 @@ export default function Navbar() {
       direction="row"
       width="100%"
       position="relative"
+      minHeight="56px"
     >
       <Stack margin="0" alignItems="center">
         <div
           className="hamburger"
           id="hamburger"
-          style={{ margin: "0", paddingInline: "25px" }}
+          style={{ margin: "0", paddingInline: "24px" }}
           onMouseOver={hamburgerSwitch.setActive}
         >
           <img
-            style={{ width: "27px", margin: "0" }}
+            style={{ width: "24px",height:'24px', margin: "0" }}
             src={Hamburger}
             alt="hamburger"
           />
@@ -48,18 +49,24 @@ export default function Navbar() {
 
       <div
         className="icon-outer"
-        style={{ paddingInlineEnd: "25px", margin: "0" }}
+        style={{ paddingInlineEnd: "40px", margin: "0" }}
       >
         <Stack
           className="icons"
           id="icons"
-          gap="32"
+          gap="24"
           alignItems="center"
           height="100%"
         >
-          <img width={"25px"} src={chat} alt="chat" />
-          <img width={"20px"} src={saved} alt="saved" />
-          <img width={"20px"} src={notification} alt="notification" />
+          <div className="nav-links">
+          <img width={"24px"} src={chat} alt="chat" />
+          </div>
+          <div className="nav-links">
+          <img width={"24px"} src={saved} alt="saved" />
+          </div>
+          <div className="nav-links"> 
+          <img width={"24px"} src={notification} alt="notification" />
+          </div>
           <img
             className="profile-pic"
             width={"30px"}
