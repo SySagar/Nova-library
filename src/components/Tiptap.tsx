@@ -32,6 +32,9 @@ const MenuBar = ({ editor, emojiBoard, setEmojiBoard }: MenuBarProps) => {
   const upload = (file: File) => {
     // handle upload logic here
 
+    console.log(file);
+
+    // return a promise that resolves the URL of the uploaded image
     return Promise.resolve("https://picsum.photos/200/300");
   };
 
