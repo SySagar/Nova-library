@@ -19,6 +19,7 @@ interface Props {
   lineHeight?: string;
   justifyContent?: string;
   alignItems?: string;
+  textWrap?: string;
 }
 
 export default function Typography({
@@ -78,6 +79,7 @@ export default function Typography({
           right: `${right}`,
           top: `${top}`,
           bottom: `${bottom}`,
+          wordWrap: "break-word",
           lineHeight: `${lineHeight}`,
           position: `${position}` as
             | "relative"

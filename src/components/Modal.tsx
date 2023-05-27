@@ -9,6 +9,9 @@ import { Cross } from "../assets/icons";
 import Checkbox from "./common/Checkbox";
 
 export default function Modal({ handleCallBack }: any) {
+
+  // const {active, setActive,setDeactive} = useContext(modalContext);
+
   return (
     <div className="modal" id="modal">
       <Stack

@@ -8,7 +8,7 @@ export default function PostCard() {
   const [editor, setEditor] = useState(false);
 
   function callBack(textFieldData: boolean) {
-    setEditor(textFieldData);
+    setEditor(editor ? false : true);
     console.log(textFieldData);
   }
 

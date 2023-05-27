@@ -8,12 +8,14 @@ import { useContext } from "react";
 import activeContext from "../context/activeContext";
 
 export default function Main() {
-  const { active } = useContext(activeContext);
+  const { active,setDeactive } = useContext(activeContext);
 
   return (
     <div className="main" style={{ width: "100%", paddingLeft: "64px" }}>
       <div
+       onClick={setDeactive}
         style={{
+          display: "flex",
           position: "fixed",
           left: "0",
           top: "0",
@@ -51,10 +53,10 @@ export default function Main() {
           id="right-cards"
           direction="column"
           margin="0"
-          flexGrow="0"
+          display="flex"
         >
           <Stack direction="column" gap="15" position="relative" display="flex">
-            <div style={{ padding: "5px" }}>
+            <div style={{ padding: "5px",display:'flex' }}>
               <Typography
                 position="absolute"
                 color="#4A52E3"

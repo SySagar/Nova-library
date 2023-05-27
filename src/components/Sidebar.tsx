@@ -97,6 +97,29 @@ export default function Sidebar() {
               <img src={Phamburger} alt="" />
             </div>
 
+            <Stack className="username" direction="column" gap="20" margintop="25"  width="100%">
+
+              <Stack gap="10">
+              <img
+            className="profile-pic"
+            width={"30px"}
+            height={"30px"}
+            style={{ borderRadius: "50%" }}
+            src="https://firebasestorage.googleapis.com/v0/b/remote-students-community-app.appspot.com/o/DefaultProfilePic.jpg?alt=media"
+            alt=""
+            />
+
+            <Typography fontWeight="bold">
+              Innovative Changemaker
+            </Typography>
+              </Stack>
+
+
+            <Divider></Divider>
+          </Stack>
+          
+
+
             <div
               style={{
                 position: "relative",

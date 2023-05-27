@@ -66,6 +66,9 @@ html {
   overflow: scroll;
 }
 
+.username{
+  display: none!important;
+}
 
 @media (width < 1200px) {
 
@@ -206,9 +209,13 @@ html {
   }
 }
 
-@media (width <= 900px) {
-  #right-cards {
-    visibility: collapse;
+#search{
+  display: none;
+}
+
+@media (width <= 980px) {
+  .right-cards {
+    display: none !important;
     background-color: aqua;
   }
 
@@ -219,6 +226,75 @@ html {
   .post-cards {
     min-width: 100%;
   }
+
+  .main-body {
+    padding-inline: 32px;
+    padding-block: 10px; 
+    max-width: 550px!important;
+  }
+
+  .username{
+    display: flex!important;
+  }
+
+  .main{
+    padding-left: 0!important;
+  }
+
+  .nav-body-container{
+    max-width: 550px!important;
+  }
+
+  #search{
+    display: inline;
+  }
+
+  #saved{
+    display: none;
+  }
+
+  .profile-pic {
+    display: none;
+  }
+
+  .icons{
+    gap: 7px!important;
+  }
+}
+
+@media (width <= 779px) {
+  .main{
+    padding-left: 0!important;
+    padding-inline: 0rem!important;
+  }
+
+  .navbar-body{
+    padding-inline: 0rem!important;
+  }
+
+  .nav-body-container{
+    
+    max-width: 100%!important;
+  }
+
+  .main-body{
+    padding-inline: 0rem!important;
+    
+    max-width: 100%!important;
+  }
+
+  .hamburger{
+    padding-inline: 5px!important;
+  }
+
+  .logo{
+    padding-inline: 5px!important;
+  }
+
+  .icon-outer{
+    padding-inline: 10px!important;
+  }
+
 }
 
 .sidebar {
